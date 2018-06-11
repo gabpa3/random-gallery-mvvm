@@ -1,2 +1,2 @@
 # random-gallery-mvvm
-Android proyect with MVVM + LiveData
+Android proyect with MVVM + LiveData + Databinding
