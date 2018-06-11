@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.gabcode.randomgallery_mvvm.profileDetail.ProfileDetailViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.ProfileActivity" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_diagonal"/>
+
+        <RelativeLayout
+            android:id="@+id/content_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_vertical_default">
+
+            <include
+                android:id="@+id/content_toolbar"
+                layout="@layout/toolbar" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_photo_profile"
+                android:layout_width="@dimen/size_circle_mask"
+                android:layout_height="@dimen/size_circle_mask"
+                android:src="@drawable/photo_profile"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/content_toolbar"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@android:color/white"
+                app:imageLarge="@{viewModel.imageUrl}"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tx_profile_data"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/margin_horizontal_default"
+            android:layout_above="@+id/content_data"/>
+
+        <LinearLayout
+            android:id="@+id/content_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_horizontal_small"
+            android:layout_marginStart="@dimen/margin_horizontal_default"
+            android:layout_marginEnd="@dimen/margin_horizontal_default"
+            android:layout_marginBottom="@dimen/margin_horizontal_default"
+            android:paddingStart="@dimen/padding_horizontal_default"
+            android:paddingEnd="@dimen/padding_horizontal_default"
+            android:background="@drawable/shape_box"
+            android:layout_centerInParent="true"
+            android:showDividers="middle"
+            android:divider="@drawable/divider_horizontal" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_vertical_small"
+                android:paddingBottom="@dimen/padding_vertical_small">
+
+                <TextView
+                    android:id="@+id/tx_label_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tx_username"
+                    style="@style/TextLabelStyle" />
+
+                <TextView
+                    android:id="@+id/tx_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.username}"
+                    android:layout_below="@id/tx_label_username" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_vertical_small"
+                android:paddingBottom="@dimen/padding_vertical_small" >
+
+                <TextView
+                    android:id="@+id/tx_label_first_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tx_first_name"
+                    style="@style/TextLabelStyle" />
+
+                <TextView
+                    android:id="@+id/tx_first_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.firstName}"
+                    android:layout_below="@+id/tx_label_first_name" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_vertical_small"
+                android:paddingBottom="@dimen/padding_vertical_small" >
+
+                <TextView
+                    android:id="@+id/tx_label_last_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tx_last_name"
+                    style="@style/TextLabelStyle" />
+
+                <TextView
+                    android:id="@+id/tx_last_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.lastName}"
+                    android:layout_below="@+id/tx_label_last_name" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_vertical_small"
+                android:paddingBottom="@dimen/padding_vertical_small">
+
+                <TextView
+                    android:id="@+id/tx_label_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tx_email"
+                    style="@style/TextLabelStyle" />
+
+                <TextView
+                    android:id="@+id/tx_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.email}"
+                    android:layout_below="@+id/tx_label_email" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

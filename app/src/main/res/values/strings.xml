@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RandomGallery-MVVM</string>
+    <string name="tx_username">Username</string>
+    <string name="tx_first_name">First name</string>
+    <string name="tx_last_name">Last name</string>
+    <string name="tx_email">Email</string>
+    <string name="tx_profile_data">Profile data</string>
+    <string name="tx_title_profile_detail">Profile detail</string>
+</resources>

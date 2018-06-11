@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="ItemGalleryBinding">
+        <variable
+            name="item"
+            type="com.gabcode.randomgallery_mvvm.data.UserProfile" />
+        <variable
+            name="listener"
+            type="com.gabcode.randomgallery_mvvm.profileGallery.ProfileGalleryItemListener" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frame_thumbnail"
+        android:foreground="@drawable/ripple_effect"
+        android:clickable="true"
+        android:onClick="@{() -> listener.onItemClicked(item)}">
+
+        <ImageView
+            android:id="@+id/img_photo_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@android:color/white"
+            app:thumbnail="@{item.picture.thumbnail}"/>
+
+    </FrameLayout>
+
+</layout>
